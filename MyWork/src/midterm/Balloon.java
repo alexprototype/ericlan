@@ -1,6 +1,4 @@
-package balloon_project;
-
-import java.util.*;
+package midterm;
 
 /**
  * We capture a Balloon which can be inflated, deflated and popped. A Balloon
@@ -78,7 +76,7 @@ public class Balloon {
 		numBalloons++;
 	}
 
-	public Balloon(String c, int capacity) {
+	public Balloon(int capacity,String c) {
 		this.amount = 0;
 		this.capacity = capacity;
 		this.isPopped = false;
@@ -123,47 +121,5 @@ public class Balloon {
 		s = s + " popped=" + this.isPopped;
 		return s;
 	}
-
-	public static void main(String[] args) {
-		// Exercise: Create a few Balloons, inflate some, pop some, cause some
-		// to be popped
-		// and try to inflate them again and see what happens.
-		Balloon b1 = new Balloon("Green", 100);
-		// Above is same as
-		// Balloon b1; // Create a reference to Balloon
-		// b1=new Balloon("Red", 100); // Create and init a new Balloon then
-		// assign its phone number to b1
-
-		System.out.println(b1.toString());
-		System.out.println(b1); // same as above, toString() is a special method
-		b1.inflate(10);
-		System.out.println(b1);
-		Balloon b2 = null; // b2 is of type Reference to Balloon
-		// b2.inflate(10); // null pointer exception, can't do this!!
-
-		// At this point, two reference to Balloon exist, only one Balloon
-		// exists
-		// Make sure you can follow and understand the following!
-		b2 = b1;
-
-		// The VALUE of a reference is the address (phone number) it holds.
-		// x=y takes the VALUE of y and puts it into x
-		// also, Java is pass by VALUE
-
-		b2.inflate(50);
-		System.out.println(b1);
-		b2 = new Balloon("Blue");
-		b2.inflate(110);
-		System.out.println(b1);
-		System.out.println(b2);
-		Balloon b7;
-		b7 = b1;
-		b1 = b2;
-		b2 = b7;
-		System.out.println(b1);
-		System.out.println(b2);
-		b1.setCapacity(10);
-		boolean a =Arrays.asList(CAMPUSES).contains("a");
-		System.out.println(a);
-	}
 }
+
